@@ -532,13 +532,13 @@
     function createFloatingEmojis() {
       const emojis = ["🍓", "💌", "🥝","💋", ];
       
-       for (let i = 0; i < 200; i++) {
+       for (let i = 0; i < 180; i++) {
       const floaty = document.createElement("div");
       floaty.classList.add("floating");
       floaty.innerText = emojis[Math.floor(Math.random() * emojis.length)];
       floaty.style.left = Math.random() * 100 + "%";
       floaty.style.top = Math.random() * 100 + "%";
-      floaty.style.fontSize = 32 + Math.random() * 24 + "px";
+      floaty.style.fontSize = 24 + Math.random() * 24 + "px";
       floaty.style.animationDuration = 6 + Math.random() * 6 + "s";
       document.body.appendChild(floaty);
     }
@@ -737,6 +737,7 @@
   </script>
 </body>
 </html>
+
 
 
 
