@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday Shravni 🎂✨</title>
+  <meta name="description" content="A beautiful birthday celebration for Shravni's 17th birthday" />
+  
+  <!-- Beautiful Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Dancing+Script:wght@400;700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Modern Birthday Theme Colors - Enhanced for more aesthetic appeal with softer, romantic tones */
+      --background: hsl(320, 100%, 97%);
+      --foreground: hsl(340, 30%, 10%);
+      --card: hsl(325, 100%, 99%);
+      --primary: hsl(335, 100%, 65%);
+      --primary-foreground: hsl(0, 0%, 100%);
+      --secondary: hsl(315, 90%, 92%);
+      --muted-foreground: hsl(340, 15%, 35%);
+      --accent: hsl(310, 100%, 75%);
+      --border: hsl(325, 60%, 85%);
+      --gold: hsl(45, 100%, 60%);
+      --rose: hsl(350, 100%, 75%);
+      --purple: hsl(285, 100%, 80%);
+      
+      /* Modern Gradients - Softer and more blended for aesthetic enhancement */
+      --gradient-romantic: linear-gradient(135deg, hsl(320, 100%, 97%), hsl(310, 100%, 88%), hsl(300, 100%, 85%));
+      --gradient-glass: linear-gradient(180deg, hsl(325, 100%, 99%, 0.95), hsl(315, 100%, 95%, 0.85));
+      --gradient-button: linear-gradient(135deg, hsl(335, 100%, 70%), hsl(320, 100%, 65%), hsl(310, 100%, 70%));
+      --gradient-button-secondary: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(320, 100%, 96%));
+      --gradient-modal: linear-gradient(135deg, hsl(310, 100%, 92%, 0.95), hsl(330, 100%, 95%, 0.90));
+      
+      /* Enhanced Effects - Added more glow and subtle shadows for aesthetic depth */
+      --shadow-glass: 0 20px 60px hsl(0, 0%, 0%, 0.15), 0 8px 25px hsl(335, 100%, 65%, 0.2);
+      --shadow-button: 0 15px 40px hsl(335, 100%, 65%, 0.25);
+      --shadow-glow: 0 0 30px hsl(335, 100%, 65%, 0.4);
+      --shadow-polaroid: 0 8px 25px hsl(0, 0%, 0%, 0.1), 0 3px 12px hsl(335, 50%, 70%, 0.15);
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body { 
+      min-height: 100%; 
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--gradient-romantic);
+      overflow-y: auto;
+      position: relative;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* FLOATING EMOJIS - Enhanced with more variety and smoother animation */
+    .floating {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: normal;
+      filter: saturate(2) drop-shadow(var(--shadow-glow));
+      will-change: transform, opacity;
+      user-select: none;
+      animation: floatUp 5s ease-in-out infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(-10deg) scale(0.8); opacity: 0.3; }
+      25% { opacity: 0.9; }
+      50% { transform: translateY(30vh) rotate(20deg) scale(1.4); }
+      100% { transform: translateY(-20vh) rotate(10deg) scale(1); opacity: 0.3; }
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* MODERN GLASS CARD - Adjusted padding for better mobile fit */
+    .birthday-card {
+      background: var(--gradient-glass);
+      border-radius: 2rem;
+      padding: 1.5rem;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: var(--shadow-glass);
+      backdrop-filter: blur(15px) saturate(180%);
+      border: 1px solid hsl(325, 50%, 85%, 0.35);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: visible;
+      margin-bottom: 2rem;
+    }
+
+    .birthday-card:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 30px 80px hsl(0, 0%, 0%, 0.25), 0 10px 30px hsl(335, 100%, 65%, 0.2);
+    }
+
+    /* TYPOGRAPHY - Adjusted sizes for better readability on mobile */
+    .main-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2rem, 7vw, 3rem);
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 0.8rem;
+      letter-spacing: 1px;
+      text-shadow: 0 3px 10px hsl(0, 0%, 0%, 0.15);
+    }
+
+    .subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1rem, 4.5vw, 1.5rem);
+      font-weight: 600;
+      text-align: center;
+      color: var(--foreground);
+      margin-bottom: 0.8rem;
+    }
+
+    .description {
+      font-family: 'Poppins', sans-serif;
+      color: var(--muted-foreground);
+      font-size: clamp(0.8rem, 3vw, 0.9rem);
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto 1.2rem;
+      line-height: 1.6;
+    }
+
+    /* MODERN POLAROID GALLERY - 2-2-2 approach for mobile-first */
+    .polaroid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .polaroid {
+      background: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(0, 0%, 98%));
+      padding: 0.5rem 0.5rem 0.8rem 0.5rem;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-polaroid);
+      width: 100%;
+      max-width: 180px;
+      justify-self: center;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: scale(0.85) translateY(15px) rotate(0deg);
+      border: 1px solid hsl(0, 0%, 95%);
+    }
+
+    .polaroid:nth-child(odd) {
+      transform: scale(0.85) translateY(15px) rotate(-2deg);
+    }
+
+    .polaroid:nth-child(even) {
+      transform: scale(0.85) translateY(15px) rotate(2deg);
+    }
+
+    .polaroid.show {
+      opacity: 1;
+      transform: scale(1) translateY(0) rotate(var(--rotation, 0deg));
+    }
+
+    .polaroid:hover {
+      transform: scale(1.05) translateY(-5px) rotate(0deg);
+      box-shadow: 0 15px 30px hsl(0, 0%, 0%, 0.2), 0 5px 15px hsl(335, 100%, 65%, 0.15);
+    }
+
+    .polaroid img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 0.3rem;
+    }
+
+    .polaroid-caption {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(0.7rem, 2vw, 0.8rem);
+      margin-top: 0.5rem;
+      color: hsl(340, 30%, 25%);
+      letter-spacing: 0.3px;
+      font-weight: 500;
+    }
+
+    /* BUTTONS - Made wider for mobile touch */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 1.2rem;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      min-width: 160px;
+    }
+
+    .btn-primary {
+      background: var(--gradient-button);
+      color: var(--primary-foreground);
+      box-shadow: var(--shadow-button);
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px hsl(340, 100%, 60%, 0.35);
+    }
+
+    .btn-secondary {
+      background: var(--gradient-button-secondary);
+      color: var(--primary);
+      border: 1px solid hsl(340, 100%, 60%, 0.15);
+    }
+
+    .btn-secondary:hover {
+      background: linear-gradient(180deg, hsl(350, 100%, 95%), hsl(0, 0%, 100%));
+      transform: scale(1.05);
+    }
+
+    /* SHIMMER EFFECT - Softer for aesthetics */
+    .shimmer {
+      position: absolute;
+      top: -1.2rem;
+      right: -1.2rem;
+      width: 8rem;
+      height: 5rem;
+      pointer-events: none;
+      z-index: 1;
+      background: linear-gradient(90deg, 
+        hsl(350, 100%, 95%, 0) 0%, 
+        hsl(350, 100%, 95%, 0.5) 50%, 
+        hsl(350, 100%, 95%, 0) 100%);
+      transform: translateX(-120%) rotate(25deg);
+      filter: blur(1.2rem);
+      border-radius: 35%;
+      opacity: 0;
+      animation: shimmer 2s infinite linear;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-120%) rotate(25deg); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateX(120%) rotate(25deg); opacity: 0; }
+    }
+
+    /* MODERN MODALS - Enhanced for girly aesthetic with smaller size */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-modal);
+      backdrop-filter: blur(20px);
+      z-index: 50;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.6s ease;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+    .modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: linear-gradient(145deg, hsl(325, 100%, 99%, 0.98), hsl(310, 100%, 95%, 0.95));
+      padding: 0.8rem;
+      border-radius: 1.2rem;
+      max-width: 350px;
+      width: 85%;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      border: 1px solid hsl(310, 100%, 85%, 0.3);
+      box-shadow: 0 8px 30px hsl(0, 0%, 0%, 0.1), 0 4px 10px hsl(335, 100%, 65%, 0.1);
+      position: relative;
+      animation: popIn 0.4s ease-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Simplified heart decoration for minimal aesthetic */
+    .modal-content::before {
+      content: '🥝';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      filter: drop-shadow(0 0 5px hsl(335, 100%, 65%, 0.3));
+    }
+
+    .modal-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.2rem, 4.5vw, 1.4rem);
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 4px hsl(335, 100%, 65%, 0.2);
+    }
+
+    .modal-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(0.65rem, 2.2vw, 0.75rem);
+      line-height: 1.4;
+      color: var(--foreground);
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    /* Simplified subtle heart underline */
+    .modal-text::after {
+      content: '♥';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--primary);
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+
+    .modal-close {
+      background: linear-gradient(135deg, hsl(335, 100%, 70%), hsl(310, 100%, 70%));
+      color: var(--primary-foreground);
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.65rem, 2vw, 0.75rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px hsl(340, 100%, 60%, 0.2);
+    }
+
+    .modal-close:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px hsl(340, 100%, 60%, 0.3);
+    }
+
+    /* CONFETTI */
+    .confetti {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      z-index: 60;
+      pointer-events: none;
+      border-radius: 2px;
+      will-change: transform, opacity;
+    }
+
+    /* HEARTS */
+    .heart {
+      position: fixed;
+      z-index: 60;
+      pointer-events: none;
+      will-change: transform, opacity;
+      font-size: clamp(0.8rem, 3.5vw, 1rem);
+    }
+
+    /* ENHANCED RESPONSIVE DESIGN - Mobile-first, scale up for larger screens */
+    @media (min-width: 768px) {
+      .polaroid-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .polaroid {
+        max-width: 140px;
+      }
+      
+      .polaroid img {
+        height: 100px;
+      }
+      
+      .controls {
+        flex-direction: row;
+      }
+      
+      .btn {
+        width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .polaroid-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .polaroid {
+        max-width: 220px;
+      }
+
+      .polaroid img {
+        height: 140px;
+      }
+
+      .birthday-card {
+        padding: 1rem;
+      }
+
+      .floating {
+        font-size: clamp(18px, 5vw, 22px) !important;
+      }
+
+      .modal-content {
+        padding: 0.6rem;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Emojis Container -->
+  <div id="floating-container"></div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="birthday-card" id="birthdayCard">
+      <!-- Shimmer Effect -->
+      <div class="shimmer"></div>
+      
+      <!-- Content -->
+      <div class="birthday-message">
+        <h1 class="main-title">Happy 17th Birthday</h1>
+        <h2 class="subtitle">Shravni Cutu 🎂🍓</h2>
+        <p class="description">Hey Cutu, a very happy 17th birthday to my girl! I love you the most 💌!</p>
+        <p class="description">My home and my forever comfort, I love you!</p>
+        <p class="description">
+          <strong>PS:</strong> Click the Fav button below to see more of our favorite moments.<br>
+          Click the From My Heart button to discover what my heart holds for you.
+        </p>
+      </div>
+
+      <!-- Enhanced Polaroid Gallery -->
+      <div class="polaroid-container">
+        <div class="polaroid" data-rotation="-6deg" style="--rotation: -6deg;">
+          <img src="images/hug.jpg" alt="Sweet moment" />
+          <div class="polaroid-caption">22nd Oct Fav</div>
+        </div>
+        <div class="polaroid" data-rotation="5deg" style="--rotation: 5deg;">
+          <img src="images/garba.jpg" alt="Laughter" />
+          <div class="polaroid-caption">Mast dikhtiye</div>
+        </div>
+        <div class="polaroid" data-rotation="-4deg" style="--rotation: -4deg;">
+          <img src="images/movie.jpg" alt="Fav day" />
+          <div class="polaroid-caption">Fav Day</div>
+        </div>
+        <div class="polaroid" data-rotation="7deg" style="--rotation: 7deg;">
+          <img src="images/trad.jpg" alt="Cutie" />
+          <div class="polaroid-caption">Propose Krdiya Omg</div>
+        </div>
+        <div class="polaroid" data-rotation="-5deg" style="--rotation: -5deg;">
+          <img src="images/png1.png" alt="Sweet memories" />
+          <div class="polaroid-caption">I Love U Maam</div>
+        </div>
+        <div class="polaroid" style="--rotation: 6deg;" data-rotation="6deg">
+          <img src="images/png3.png" alt="Forever together" />
+          <div class="polaroid-caption">Valentines day Mast</div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button class="btn btn-primary" id="startBtn">Fav Fav Fav U Fav</button>
+        <button class="btn btn-secondary" id="revealBtn">From My Heart to Yours 💌</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Love Message Modal -->
+  <div class="modal" id="messageModal">
+    <div class="modal-content">
+      <h2 class="modal-title">Heyy Shravni 🍓 !</h2>
+      <p class="modal-text">
+        Hey Cutu, again a very happy birthday!<br>
+        I don’t know where to start, but honestly, I feel so lucky to be yours.<br>
+        No matter what, I’ll always be here for you.<br>
+        I always want to be your favorite boy and will always try to make you feel safe and happy.<br>
+        I’m so lucky to have you!<br>
+        Sometimes I fight, and sometimes I’ve disappointed you,<br>
+        but I never really meant it—I'm truly sorry for that, and I will improve.<br>
+        I always want to be loved by you! The last 10 months have been the happiest with you around.<br>
+        Please always be mine!<br>
+        Sorry for all the fights! Thank you for all the love!<br>
+        Happy Birthday, my love, my Shravni 🍓!<br>
+        P.S.: More surprises coming your way!<br><br>
+        - Kiwi 🥝
+        <br><br>
+        <strong style="color: var(--primary);">Happy Birthday, my heart! ❤️</strong>
+      </p>
+      <button class="modal-close" id="closeMessage">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Initialize floating emojis with modern set
+    function createFloatingEmojis() {
+      const emojis = ["🍓", "💌", "🥝","💋", ];
+      
+       for (let i = 0; i < 200; i++) {
+      const floaty = document.createElement("div");
+      floaty.classList.add("floating");
+      floaty.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      floaty.style.left = Math.random() * 100 + "%";
+      floaty.style.top = Math.random() * 100 + "%";
+      floaty.style.fontSize = 32 + Math.random() * 24 + "px";
+      floaty.style.animationDuration = 6 + Math.random() * 6 + "s";
+      document.body.appendChild(floaty);
+    }
+    }
+
+    // Create special kiss emojis for reveal modal
+    function createKissEmojis() {
+      const container = document.getElementById('floating-container');
+      const kissEmojis = ["🍓", "💌", "🥝", "💋", "💖"];
+      
+      container.innerHTML = '';
+      
+      for (let i = 0; i < 80; i++) {
+        const emoji = document.createElement('div');
+        emoji.className = 'floating';
+        emoji.textContent = kissEmojis[Math.floor(Math.random() * kissEmojis.length)];
+        emoji.style.left = Math.random() * 100 + '%';
+        emoji.style.top = Math.random() * 100 + '%';
+        emoji.style.fontSize = clamp(18, Math.random() * 14 + 18, 26) + 'px';
+        emoji.style.animationDuration = (3 + Math.random() * 3) + 's';
+        emoji.style.animationDelay = Math.random() * 1.5 + 's';
+        emoji.style.filter = 'drop-shadow(0 0 12px rgba(255, 62, 128, 0.7))';
+        container.appendChild(emoji);
+      }
+    }
+
+    // Card tilt effect simplified for mobile
+    function initCardTilt() {
+      const card = document.getElementById('birthdayCard');
+      let isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+      
+      if (!isTouchDevice) {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width;
+          const y = (e.clientY - rect.top) / rect.height;
+          
+          const rotateX = (y - 0.5) * 8;
+          const rotateY = (x - 0.5) * -12;
+          
+          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      }
+    }
+
+    // Polaroid animations
+    function animatePolaroids() {
+      const polaroids = document.querySelectorAll('.polaroid');
+      
+      polaroids.forEach((polaroid, index) => {
+        const rotation = polaroid.dataset.rotation;
+        polaroid.style.transform = `rotate(${rotation}) scale(0.85) translateY(15px)`;
+        
+        setTimeout(() => {
+          polaroid.classList.add('show');
+          polaroid.style.transform = `rotate(${rotation}) scale(1) translateY(0)`;
+        }, index * 250);
+      });
+    }
+
+    // Confetti effect
+    function createConfetti() {
+      const colors = [
+        'hsl(340, 100%, 60%)', 
+        'hsl(45, 100%, 50%)', 
+        'hsl(330, 100%, 70%)', 
+        'hsl(350, 100%, 70%)'
+      ];
+      
+      for (let i = 0; i < 60; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.top = Math.random() * window.innerHeight + 'px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.filter = `drop-shadow(0 0 6px ${confetti.style.backgroundColor})`;
+        
+        document.body.appendChild(confetti);
+        
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 80 + Math.random() * 180;
+        const destX = Math.cos(angle) * distance;
+        const destY = Math.sin(angle) * distance;
+        
+        confetti.animate([
+          { transform: 'translate(0,0) scale(1)', opacity: 1 },
+          { transform: `translate(${destX}px, ${destY}px) scale(0.6)`, opacity: 0 }
+        ], {
+          duration: 1000 + Math.random() * 700,
+          easing: 'cubic-bezier(0.2,0.9,0.2,1)'
+        });
+        
+        setTimeout(() => confetti.remove(), 1800);
+      }
+    }
+
+    // Heart fireworks
+    function createHeartFireworks() {
+      const card = document.getElementById('birthdayCard');
+      const rect = card.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      for (let i = 0; i < 40; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.textContent = '💖';
+        heart.style.left = (centerX - 10) + 'px';
+        heart.style.top = (centerY - 10) + 'px';
+        heart.style.fontSize = clamp(12, Math.random() * 18 + 12, 18) + 'px';
+        
+        document.body.appendChild(heart);
+        
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 80 + Math.random() * 180;
+        const destX = Math.cos(angle) * distance;
+        const destY = Math.sin(angle) * distance - (70 + Math.random() * 100);
+        
+        heart.animate([
+          { transform: 'translate(0,0) scale(1)', opacity: 1 },
+          { transform: `translate(${destX}px, ${destY}px) scale(0.7)`, opacity: 0.9 },
+          { transform: `translate(${destX * 1.4}px, ${destY * 1.4}px) scale(0.3)`, opacity: 0 }
+        ], {
+          duration: 1000 + Math.random() * 600,
+          easing: 'cubic-bezier(0.2,0.9,0.2,1)'
+        });
+        
+        setTimeout(() => heart.remove(), 1700);
+      }
+    }
+
+    // Clamp function for better scaling
+    function clamp(min, val, max) {
+      return Math.min(Math.max(val, min), max);
+    }
+
+    // Event listeners
+    document.getElementById('startBtn').addEventListener('click', () => {
+      createConfetti();
+      animatePolaroids();
+    });
+
+    document.getElementById('revealBtn').addEventListener('click', () => {
+      createHeartFireworks();
+      createConfetti();
+      createKissEmojis();
+      
+      setTimeout(() => {
+        document.getElementById('messageModal').classList.add('show');
+      }, 1000);
+    });
+
+    document.getElementById('closeMessage').addEventListener('click', () => {
+      document.getElementById('messageModal').classList.remove('show');
+      setTimeout(() => {
+        document.getElementById('floating-container').innerHTML = '';
+        createFloatingEmojis();
+      }, 300);
+    });
+
+    document.getElementById('messageModal').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) {
+        e.currentTarget.classList.remove('show');
+      }
+    });
+
+    // Initialize everything
+    document.addEventListener('DOMContentLoaded', () => {
+      createFloatingEmojis();
+      initCardTilt();
+      
+      setTimeout(() => {
+        const firstPolaroid = document.querySelector('.polaroid');
+        if (firstPolaroid) {
+          firstPolaroid.classList.add('show');
+          firstPolaroid.style.transform = `rotate(${firstPolaroid.dataset.rotation}) scale(1)`;
+        }
+      }, 600);
+    });
+
+    // Keyboard accessibility
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.getElementById('messageModal').classList.remove('show');
+      }
+    });
+
+    // Prevent pinch zoom on mobile
+    document.addEventListener('gesturestart', (e) => {
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>
+
+
+
