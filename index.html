@@ -11,7 +11,7 @@
 
   <style>
     :root {
-      /* Modern Birthday Theme Colors - Enhanced for more aesthetic appeal with softer, romantic tones */
+      /* Modern Birthday Theme Colors - Enhanced for softer, romantic tones */
       --background: hsl(320, 100%, 97%);
       --foreground: hsl(340, 30%, 10%);
       --card: hsl(325, 100%, 99%);
@@ -32,10 +32,10 @@
       --gradient-button-secondary: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(320, 100%, 96%));
       --gradient-modal: linear-gradient(135deg, hsl(310, 100%, 92%, 0.95), hsl(330, 100%, 95%, 0.90));
       
-      /* Enhanced Effects - Added more glow and subtle shadows for aesthetic depth */
+      /* Enhanced Effects - Subtle shadows and glow for depth */
       --shadow-glass: 0 20px 60px hsl(0, 0%, 0%, 0.15), 0 8px 25px hsl(335, 100%, 65%, 0.2);
       --shadow-button: 0 15px 40px hsl(335, 100%, 65%, 0.25);
-      --shadow-glow: 0 0 30px hsl(335, 100%, 65%, 0.4);
+      --shadow-glow: 0 0 20px hsl(335, 100%, 65%, 0.3);
       --shadow-polaroid: 0 8px 25px hsl(0, 0%, 0%, 0.1), 0 3px 12px hsl(335, 50%, 70%, 0.15);
     }
 
@@ -57,23 +57,24 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    /* FLOATING EMOJIS - Enhanced with more variety and smoother animation */
+    /* FLOATING EMOJIS - Minimal and realistic with subtle glow */
     .floating {
       position: absolute;
       pointer-events: none;
       z-index: 0;
       mix-blend-mode: normal;
-      filter: saturate(2) drop-shadow(var(--shadow-glow));
+      filter: drop-shadow(0 0 8px hsla(335, 100%, 65%, 0.3));
       will-change: transform, opacity;
       user-select: none;
-      animation: floatUp 5s ease-in-out infinite;
+      animation: floatUp 8s ease-in-out infinite;
+      opacity: 0.6;
     }
 
     @keyframes floatUp {
-      0% { transform: translateY(100vh) rotate(-10deg) scale(0.8); opacity: 0.3; }
-      25% { opacity: 0.9; }
-      50% { transform: translateY(30vh) rotate(20deg) scale(1.4); }
-      100% { transform: translateY(-20vh) rotate(10deg) scale(1); opacity: 0.3; }
+      0% { transform: translateY(100vh) rotate(0deg) scale(0.9); opacity: 0.4; }
+      25% { opacity: 0.7; }
+      50% { transform: translateY(40vh) rotate(10deg) scale(1.1); }
+      100% { transform: translateY(-20vh) rotate(5deg) scale(1); opacity: 0.4; }
     }
 
     /* MAIN CONTAINER */
@@ -87,7 +88,7 @@
       z-index: 10;
     }
 
-    /* MODERN GLASS CARD - Adjusted padding for better mobile fit */
+    /* MODERN GLASS CARD */
     .birthday-card {
       background: var(--gradient-glass);
       border-radius: 2rem;
@@ -108,7 +109,7 @@
       box-shadow: 0 30px 80px hsl(0, 0%, 0%, 0.25), 0 10px 30px hsl(335, 100%, 65%, 0.2);
     }
 
-    /* TYPOGRAPHY - Adjusted sizes for better readability on mobile */
+    /* TYPOGRAPHY */
     .main-title {
       font-family: 'Dancing Script', cursive;
       font-size: clamp(2rem, 7vw, 3rem);
@@ -138,7 +139,7 @@
       line-height: 1.6;
     }
 
-    /* MODERN POLAROID GALLERY - 2-2-2 approach for mobile-first */
+    /* MODERN POLAROID GALLERY */
     .polaroid-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -199,7 +200,7 @@
       font-weight: 500;
     }
 
-    /* BUTTONS - Made wider for mobile touch */
+    /* BUTTONS */
     .controls {
       display: flex;
       flex-wrap: wrap;
@@ -243,7 +244,7 @@
       transform: scale(1.05);
     }
 
-    /* SHIMMER EFFECT - Softer for aesthetics */
+    /* SHIMMER EFFECT */
     .shimmer {
       position: absolute;
       top: -1.2rem;
@@ -269,7 +270,7 @@
       100% { transform: translateX(120%) rotate(25deg); opacity: 0; }
     }
 
-    /* MODERN MODALS - Enhanced for girly aesthetic with smaller size */
+    /* MODERN MODALS */
     .modal {
       position: fixed;
       inset: 0;
@@ -312,7 +313,6 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
-    /* Simplified heart decoration for minimal aesthetic */
     .modal-content::before {
       content: '🥝';
       position: absolute;
@@ -341,7 +341,6 @@
       position: relative;
     }
 
-    /* Simplified subtle heart underline */
     .modal-text::after {
       content: '♥';
       position: absolute;
@@ -392,7 +391,7 @@
       font-size: clamp(0.8rem, 3.5vw, 1rem);
     }
 
-    /* ENHANCED RESPONSIVE DESIGN - Mobile-first, scale up for larger screens */
+    /* ENHANCED RESPONSIVE DESIGN */
     @media (min-width: 768px) {
       .polaroid-container {
         grid-template-columns: repeat(3, 1fr);
@@ -434,7 +433,7 @@
       }
 
       .floating {
-        font-size: clamp(18px, 5vw, 22px) !important;
+        font-size: clamp(16px, 4vw, 20px) !important;
       }
 
       .modal-content {
@@ -488,7 +487,7 @@
           <img src="images/png1.png" alt="Sweet memories" />
           <div class="polaroid-caption">I Love U Maam</div>
         </div>
-        <div class="polaroid" style="--rotation: 6deg;" data-rotation="6deg">
+        <div class="polaroid" data-rotation="6deg" style="--rotation: 6deg;">
           <img src="images/png3.png" alt="Forever together" />
           <div class="polaroid-caption">Valentines day Mast</div>
         </div>
@@ -508,17 +507,22 @@
       <h2 class="modal-title">Heyy Shravni 🍓 !</h2>
       <p class="modal-text">
         Hey Cutu, again a very happy birthday!<br>
-        I don’t know where to start, but honestly, I feel so lucky to be yours.<br>
+        I don’t know where to start, but honestly, I feel so so so lucky to be yours.<br>
         No matter what, I’ll always be here for you.<br>
         I always want to be your favorite boy and will always try to make you feel safe and happy.<br>
         I’m so lucky to have you!<br>
         Sometimes I fight, and sometimes I’ve disappointed you,<br>
-        but I never really meant it—I'm truly sorry for that, and I will improve.<br>
-        I always want to be loved by you! The last 10 months have been the happiest with you around.<br>
-        Please always be mine!<br>
+        but I never really meant it—I'm truly sorry for that, and I will improve. agiain very sorry maam<br>
+        I always want to be loved only by you! The last 10 months have been the happiest with you around.<br>
+        Please always be mine forever Shravni Kulkarni Maam !
         Sorry for all the fights! Thank you for all the love!<br>
+        I promise to always keep you safe , happy and always guide to towards best things ! <br>
+        I know hurted you many times (you have the screenshots too) ! but sorry whenever i get jealous , I start to overthink , coz i dont to lose you !<br>
         Happy Birthday, my love, my Shravni 🍓!<br>
-        P.S.: More surprises coming your way!<br><br>
+        Very Happy 17th birthday ! I love you more than anyone else do !<br>
+        Bhul mat haa mujhe kabhi (USA jayegi toh) ! I love youu <br>
+        I had more things but i will say it in some other letter ! One thing i can say in every letter is <br> <b>YOU ARE THE MOST PRETTIEST GIRL BY LOOKS , HEART & EMOTIONS OHH YOU HAVE VERY PRETTY EYES  </b> 
+       <br> P.S.: More surprises coming your way!<br><br>
         - Kiwi 🥝
         <br><br>
         <strong style="color: var(--primary);">Happy Birthday, my heart! ❤️</strong>
@@ -528,39 +532,41 @@
   </div>
 
   <script>
-    // Initialize floating emojis with modern set
+    // Initialize floating emojis with minimal set
     function createFloatingEmojis() {
-      const emojis = ["🍓", "💌", "🥝","💋", ];
+      const container = document.getElementById('floating-container');
+      const emojis = ["🍓", "🥝", "💌","🍓", "🥝", "💌"];
       
-       for (let i = 0; i < 180; i++) {
-      const floaty = document.createElement("div");
-      floaty.classList.add("floating");
-      floaty.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-      floaty.style.left = Math.random() * 100 + "%";
-      floaty.style.top = Math.random() * 100 + "%";
-      floaty.style.fontSize = 24 + Math.random() * 24 + "px";
-      floaty.style.animationDuration = 6 + Math.random() * 6 + "s";
-      document.body.appendChild(floaty);
-    }
+      for (let i = 0; i < 200; i++) { // Reduced number for minimal effect
+        const floaty = document.createElement("div");
+        floaty.classList.add("floating");
+        floaty.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        floaty.style.left = Math.random() * 100 + "%";
+        floaty.style.top = Math.random() * 100 + "%";
+        floaty.style.fontSize = clamp(32, Math.random() * 16 + 20, 28) + "px";
+        floaty.style.animationDuration = 6 + Math.random() * 4 + "s";
+        floaty.style.animationDelay = Math.random() * 2 + "s";
+        container.appendChild(floaty);
+      }
     }
 
     // Create special kiss emojis for reveal modal
     function createKissEmojis() {
       const container = document.getElementById('floating-container');
-      const kissEmojis = ["🍓", "💌", "🥝", "💋", "💖"];
+      const kissEmojis = ["💖", "🌸", "🥝", "💌"];
       
       container.innerHTML = '';
       
-      for (let i = 0; i < 80; i++) {
+      for (let i = 0; i < 40; i++) {
         const emoji = document.createElement('div');
         emoji.className = 'floating';
         emoji.textContent = kissEmojis[Math.floor(Math.random() * kissEmojis.length)];
         emoji.style.left = Math.random() * 100 + '%';
         emoji.style.top = Math.random() * 100 + '%';
-        emoji.style.fontSize = clamp(18, Math.random() * 14 + 18, 26) + 'px';
-        emoji.style.animationDuration = (3 + Math.random() * 3) + 's';
+        emoji.style.fontSize = clamp(16, Math.random() * 12 + 16, 24) + 'px';
+        emoji.style.animationDuration = (4 + Math.random() * 3) + 's';
         emoji.style.animationDelay = Math.random() * 1.5 + 's';
-        emoji.style.filter = 'drop-shadow(0 0 12px rgba(255, 62, 128, 0.7))';
+        emoji.style.filter = 'drop-shadow(0 0 10px rgba(255, 62, 128, 0.5))';
         container.appendChild(emoji);
       }
     }
@@ -646,13 +652,13 @@
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
       
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 100; i++) {
         const heart = document.createElement('div');
         heart.className = 'heart';
         heart.textContent = '💖';
         heart.style.left = (centerX - 10) + 'px';
         heart.style.top = (centerY - 10) + 'px';
-        heart.style.fontSize = clamp(12, Math.random() * 18 + 12, 18) + 'px';
+        heart.style.fontSize = clamp(16, Math.random() * 18 + 12, 18) + 'px';
         
         document.body.appendChild(heart);
         
@@ -737,6 +743,7 @@
   </script>
 </body>
 </html>
+
 
 
 
