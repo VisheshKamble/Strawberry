@@ -204,6 +204,7 @@
       gap: 0.5rem;
       justify-content: center;
       margin-top: 1rem;
+      margin-left: 3rem;
       width: 100%;
       max-width: 300px;
     }
@@ -579,7 +580,7 @@
       const container = document.getElementById('floating-container');
       const emojis = ["🍓", "🥝", "💌"];
       
-      for (let i = 0; i < 200; i++) {
+      for (let i = 0; i < 180; i++) {
         const floaty = document.createElement("div");
         floaty.classList.add("floating");
         floaty.innerText = emojis[Math.floor(Math.random() * emojis.length)];
@@ -599,7 +600,7 @@
       
       container.innerHTML = '';
       
-      for (let i = 0; i < 80; i++) {
+      for (let i = 0; i < 40; i++) {
         const emoji = document.createElement('div');
         emoji.className = 'floating';
         emoji.textContent = kissEmojis[Math.floor(Math.random() * kissEmojis.length)];
@@ -791,6 +792,7 @@
   </script>
 </body>
 </html>
+
 
 
 
